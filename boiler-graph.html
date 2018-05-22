@@ -1,0 +1,394 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Boiler Performance Report</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+<style>
+#chartdiv1,#chartdiv2,#chartdiv3,#chartdiv4 {
+	height	: 300px;
+    float: left;
+}	
+.graphclass{
+	background: #FFF;
+	border:1px solid rgba(0,0,0,.125)
+}											
+</style>
+
+</head>
+<body>
+
+
+        <!-- Left Panel -->
+
+     <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./index.html">Divergent</a>
+                <a class="navbar-brand hidden" href="./index.html">Divergent</a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    </li>
+                    <h3 class="menu-title">Menu</h3><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Boilers</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><a href="./add-new.html">Add Boiler</a></li>
+                            <li><a href="./index.html">View All Boilers</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Engineers</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><a href="./add-new.html">Add Engineer</a></li>
+                            <li><a href="./index.html">View All Engineers</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Complaints</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><a href="./comp-boilers.html">View All Complaints</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicing</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><a href="./serv-boilers.html">Service Due Boilers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+    <!-- Left Panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-search"></i></button>
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search with Industry Name, Employee Name, Location" aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="images/admin.png" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+
+                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
+
+                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+
+                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="content mt-3">
+	        <div class="col-lg-12">
+	        	<h2>Boiler Performance Report</h2>
+	            <div class="card">
+	                <div class="card-body">
+	                    <h4 class="mb-3">Live Chart</h4>
+	                    <div class="flot-container">
+	                        <div id="cpu-load" class="cpu-load"></div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div><!-- /# column -->
+
+            <div class="col-xl-12 " >
+                <div class="col-xl-6 graphclass" id="chartdiv1"></div>
+				<div class="col-xl-6 graphclass" id="chartdiv2"></div>
+				<div class="col-xl-6 graphclass" id="chartdiv3"></div>
+				<div class="col-xl-6 graphclass" id="chartdiv4"></div>
+            </div>
+            <!--/.col-->
+        </div> <!-- .content -->
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+	<script src="assets/js/main.js"></script>
+
+<!--  flot-chart js -->
+    <script src="assets/js/lib/flot-chart/jquery.flot.js"></script>
+    <script src="assets/js/lib/flot-chart/flot-chart-init.js"></script>
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<!-- Chart code -->
+<script>
+var chartData = generateChartData();
+
+var chart = AmCharts.makeChart("chartdiv1", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 80,
+    "dataProvider": chartData,
+    "valueAxes": [{
+        "position": "left",
+        "title": "Water Levels"
+    }],
+    "graphs": [{
+        "id": "g1",
+        "fillAlphas": 1,
+        "valueField": "visits",
+         "balloonText": "<div style='margin:5px; font-size:19px;'>Water:<b>[[value]]</b></div>"
+    }],
+    "chartScrollbar": {
+        "graph": "g1",
+        "scrollbarHeight": 80,
+        "backgroundAlpha": 0,
+        "selectedBackgroundAlpha": 0.1,
+        "selectedBackgroundColor": "#888888",
+        "graphFillAlpha": 0,
+        "graphLineAlpha": 0.5,
+        "selectedGraphFillAlpha": 0,
+        "selectedGraphLineAlpha": 1,
+        "autoGridCount": true,
+        "color": "#AAAAAA"
+    },
+    "chartCursor": {
+        "categoryBalloonDateFormat": "JJ:NN, DD MMMM",
+        "cursorPosition": "mouse"
+    },
+    "categoryField": "date",
+    "categoryAxis": {
+        "minPeriod": "mm",
+        "parseDates": true
+    },
+    "export": {
+        "enabled": true,
+         "dateFormat": "YYYY-MM-DD HH:NN:SS"
+    }
+});
+
+chart.addListener("dataUpdated", zoomChart);
+
+var chartData = generateChartData();
+var chart = AmCharts.makeChart("chartdiv2", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 80,
+    "dataProvider": chartData,
+    "valueAxes": [{
+        "position": "left",
+        "title": "Pressure"
+    }],
+    "graphs": [{
+        "id": "g1",
+        "fillAlphas": 0.1,
+        "valueField": "visits",
+         "balloonText": "<div style='margin:5px; font-size:19px;'>Pressure:<b>[[value]]</b></div>"
+    }],
+    "chartScrollbar": {
+        "graph": "g1",
+        "scrollbarHeight": 80,
+        "backgroundAlpha": 0,
+        "selectedBackgroundAlpha": 0.1,
+        "selectedBackgroundColor": "#888888",
+        "graphFillAlpha": 0,
+        "graphLineAlpha": 0.5,
+        "selectedGraphFillAlpha": 0,
+        "selectedGraphLineAlpha": 1,
+        "autoGridCount": true,
+        "color": "#AAAAAA"
+    },
+    "chartCursor": {
+        "categoryBalloonDateFormat": "JJ:NN, DD MMMM",
+        "cursorPosition": "mouse"
+    },
+    "categoryField": "date",
+    "categoryAxis": {
+        "minPeriod": "mm",
+        "parseDates": true
+    },
+    "export": {
+        "enabled": true,
+         "dateFormat": "YYYY-MM-DD HH:NN:SS"
+    }
+});
+
+chart.addListener("dataUpdated", zoomChart);
+
+
+var chartData = generateChartData();
+var chart = AmCharts.makeChart("chartdiv3", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 80,
+    "dataProvider": chartData,
+    "valueAxes": [{
+        "position": "left",
+        "title": "Temprature"
+    }],
+    "graphs": [{
+        "id": "g1",
+        "fillAlphas": 0.4,
+        "valueField": "visits",
+         "balloonText": "<div style='margin:5px; font-size:19px;'>Temprature:<b>[[value]]</b></div>"
+    }],
+    "chartScrollbar": {
+        "graph": "g1",
+        "scrollbarHeight": 80,
+        "backgroundAlpha": 0,
+        "selectedBackgroundAlpha": 0.1,
+        "selectedBackgroundColor": "#888888",
+        "graphFillAlpha": 0,
+        "graphLineAlpha": 0.5,
+        "selectedGraphFillAlpha": 0,
+        "selectedGraphLineAlpha": 1,
+        "autoGridCount": true,
+        "color": "#AAAAAA"
+    },
+    "chartCursor": {
+        "categoryBalloonDateFormat": "JJ:NN, DD MMMM",
+        "cursorPosition": "mouse"
+    },
+    "categoryField": "date",
+    "categoryAxis": {
+        "minPeriod": "mm",
+        "parseDates": true
+    },
+    "export": {
+        "enabled": true,
+         "dateFormat": "YYYY-MM-DD HH:NN:SS"
+    }
+});
+
+chart.addListener("dataUpdated", zoomChart);
+
+var chartData = generateChartData();
+var chart = AmCharts.makeChart("chartdiv4", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 80,
+    "dataProvider": chartData,
+    "valueAxes": [{
+        "position": "left",
+        "title": "Radiation"
+    }],
+    "graphs": [{
+        "id": "g1",
+        "fillAlphas": 2,
+        "valueField": "visits",
+         "balloonText": "<div style='margin:5px; font-size:19px;'>Radiation:<b>[[value]]</b></div>"
+    }],
+    "chartScrollbar": {
+        "graph": "g1",
+        "scrollbarHeight": 80,
+        "backgroundAlpha": 0,
+        "selectedBackgroundAlpha": 0.1,
+        "selectedBackgroundColor": "#888888",
+        "graphFillAlpha": 0,
+        "graphLineAlpha": 0.5,
+        "selectedGraphFillAlpha": 0,
+        "selectedGraphLineAlpha": 1,
+        "autoGridCount": true,
+        "color": "#AAAAAA"
+    },
+    "chartCursor": {
+        "categoryBalloonDateFormat": "JJ:NN, DD MMMM",
+        "cursorPosition": "mouse"
+    },
+    "categoryField": "date",
+    "categoryAxis": {
+        "minPeriod": "mm",
+        "parseDates": true
+    },
+    "export": {
+        "enabled": true,
+         "dateFormat": "YYYY-MM-DD HH:NN:SS"
+    }
+});
+
+chart.addListener("dataUpdated", zoomChart);
+// when we apply theme, the dataUpdated event is fired even before we add listener, so
+// we need to call zoomChart here
+zoomChart();
+// this method is called when chart is first inited as we listen for "dataUpdated" event
+function zoomChart() {
+    // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+    chart.zoomToIndexes(chartData.length - 250, chartData.length - 100);
+}
+
+// generate some random data, quite different range
+function generateChartData() {
+    var chartData = [];
+    // current date
+    var firstDate = new Date();
+    // now set 500 minutes back
+    firstDate.setMinutes(firstDate.getDate() - 1000);
+
+    // and generate 500 data items
+    var visits = 100;
+    for (var i = 0; i < 500; i++) {
+        var newDate = new Date(firstDate);
+        // each time we add one minute
+        newDate.setMinutes(newDate.getMinutes() + i);
+        // some random number
+        visits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+        // add data item to the array
+        chartData.push({
+            date: newDate,
+            visits: visits
+        });
+    }
+    return chartData;
+}
+</script>
+
+</body>
+</html>
